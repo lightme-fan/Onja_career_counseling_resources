@@ -14,9 +14,12 @@ function letterCount(str) {
 
     // Loop through the string array
     for (let i = 0; i < newStr.length; i++) {
-        // Check if the element is NaN
-        obj[newStr[i]] = (isNaN(obj[newStr[i]]) ? 1 : obj[newStr[i]] + 1);
-        
+        // Check if the element is NaN, then just return 1, otherwise increment it by 1
+        if (isNaN(obj[newStr[i]])) {
+            obj[newStr[i]] = 1
+        } else {
+            obj[newStr[i]] = obj[newStr[i]] + 1
+        }
     }
 
     // return the new object
